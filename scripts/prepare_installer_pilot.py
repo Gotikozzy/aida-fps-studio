@@ -36,7 +36,9 @@ def api(path: str) -> dict:
     return json.loads(subprocess.check_output(["gh", "api", f"repos/{REPOSITORY}/{path}"]))
 
 
-def download(path: str, target: Path, expected: str) -> None:
+def download(
+    path: str, target: Path, expected: str, *, accept: str = "application/octet-stream"
+) -> None:
     partial = target.with_suffix(target.suffix + ".part")
     try:
         with partial.open("wb") as stream:
@@ -45,7 +47,7 @@ def download(path: str, target: Path, expected: str) -> None:
                     "gh",
                     "api",
                     "-H",
-                    "Accept: application/octet-stream",
+                    "Accept: " + accept,
                     f"repos/{REPOSITORY}/{path}",
                 ],
                 stdout=stream,
@@ -104,7 +106,14 @@ def main() -> None:
     ):
         raise ValueError("Unexpected candidate artifact origin")
     archive = args.output / "github-artifact.zip"
-    download(f"actions/artifacts/{CURRENT_ARTIFACT}/zip", archive, ARTIFACT_HASH)
+    # Actions negotiates JSON before redirecting to the ZIP. Release assets use
+    # octet-stream instead; using that media type here produces HTTP 415.
+    download(
+        f"actions/artifacts/{CURRENT_ARTIFACT}/zip",
+        archive,
+        ARTIFACT_HASH,
+        accept="application/json",
+    )
     extract_installer(archive, args.output / CURRENT_NAME, CURRENT_HASH)
     print("Both original installers fetched and verified")
 

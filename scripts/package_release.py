@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import importlib.metadata
 import json
+import subprocess
 import sys
 import tomllib
 from pathlib import Path
@@ -11,16 +12,34 @@ from zipfile import ZIP_DEFLATED, ZipFile
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 VERSION = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]["version"]
+DOCUMENTS = (
+    "README.md",
+    "README.pt-BR.md",
+    "THIRD_PARTY_NOTICES.md",
+    "VALIDATION.md",
+    "ARCHITECTURE.md",
+    "LICENSE",
+    "NOTICE",
+    "PRIVACY.md",
+    "CODE_SIGNING.md",
+)
 
 
 def main() -> None:
     DIST.mkdir(exist_ok=True)
-    import subprocess
     source_zip = DIST / f"AIDA-FPS-Studio-{VERSION}-source.zip"
-    subprocess.run([
-        "git", "archive", "--format=zip", f"--prefix=aida-fps-studio-{VERSION}/",
-        f"--output={source_zip}", "HEAD",
-    ], cwd=ROOT, check=True)
+    subprocess.run(
+        [
+            "git",
+            "archive",
+            "--format=zip",
+            f"--prefix=aida-fps-studio-{VERSION}/",
+            f"--output={source_zip}",
+            "HEAD",
+        ],
+        cwd=ROOT,
+        check=True,
+    )
     bundle = DIST / VERSION / "AIDA-FPS-Studio"
     if not (bundle / "AIDA-FPS-Studio.exe").is_file():
         raise RuntimeError("Gere o executável antes do pacote Windows")
@@ -57,7 +76,7 @@ def main() -> None:
     (licenses / "inventory.json").write_text(
         json.dumps(inventory, indent=2, ensure_ascii=False), encoding="utf-8"
     )
-    for name in documents[:4]:
+    for name in DOCUMENTS:
         (bundle / name).write_bytes((ROOT / name).read_bytes())
     with ZipFile(DIST / f"AIDA-FPS-Studio-{VERSION}-windows-x64.zip", "w", ZIP_DEFLATED) as archive:
         for path in sorted(bundle.rglob("*")):

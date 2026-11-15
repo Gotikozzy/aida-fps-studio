@@ -16,15 +16,16 @@ configuração e não publica releases. Aprovação e onboarding são requisitos
 
 Project owner / titular: Detonando Gueek. Initial author and reviewer: project owner.
 Production signing approver: project owner, subject to onboarding verification.
-Actual GitHub accounts and SignPath identities must be recorded in the repository's
-settings and this policy before enabling signing; they are not invented in this package.
+GitHub owner, author/reviewer and designated signing approver: [Gotikozzy](https://github.com/Gotikozzy).
+SignPath identity mapping remains subject to onboarding before enabling signing.
 External PRs require review. Every production signing request requires a trusted person's
 manual approval. All team members use MFA on GitHub and SignPath. Restrict signing to
 reviewed source branches/tags and GitHub-hosted builds. Protect workflow changes and
 release publication; fork PRs never receive signing secrets.
 
 Titular e autor/revisor inicial: Detonando Gueek. Aprovador de produção: titular,
-sujeito à verificação no onboarding. Registrar contas reais antes de habilitar assinatura.
+sujeito à verificação no onboarding. Conta GitHub: [Gotikozzy](https://github.com/Gotikozzy).
+O vínculo com a identidade SignPath será definido no onboarding.
 PRs externos exigem revisão; cada solicitação de produção exige aprovação humana.
 Equipe com MFA no GitHub/SignPath. Restringir branches/tags, runners e publicação.
 

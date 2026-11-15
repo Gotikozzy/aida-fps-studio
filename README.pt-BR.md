@@ -24,8 +24,8 @@ analise e inspecione as evidências antes de exportar. Miniaturas progressivas s
 à navegação enquanto o índice autoritativo é preparado.
 
 **Situação:** 0.8.15 preparada como release aberta. Este pacote de fontes não comprova
-um instalador público assinado nem aprovação pela SignPath. A URL real do repositório
-será adicionada pelo publicador ao criá-lo; não inventamos endereço ou selo de aprovação.
+um instalador público assinado nem aprovação pela SignPath. Repositório oficial: https://github.com/Gotikozzy/aida-fps-studio.
+Não se declara aprovação ou assinatura pela SignPath.
 Site oficial existente: https://detonandogueek.com.br/aida.
 
 ## Desenvolvimento

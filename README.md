@@ -25,8 +25,8 @@ Progressive thumbnails are navigation aids while the authoritative index is prep
 
 **Distribution status:** 0.8.15 is prepared as an open-source release. This source package
 is not evidence of a signed public installer or SignPath Foundation acceptance.
-No public GitHub repository URL is invented here; the publisher adds the real URL when
-creating the repository. Existing official site: https://detonandogueek.com.br/aida.
+Source repository: https://github.com/Gotikozzy/aida-fps-studio.
+Official site: https://detonandogueek.com.br/aida.
 
 ## Development
 

@@ -37,3 +37,7 @@ dos hashes finais. Objetivo é rastreabilidade, sem prometer hashes binários id
 entre compiladores, timestamps ou assinaturas. Execute CI GitHub separadamente.
 
 [Other language / Outro idioma](../en/BUILD.md)
+
+O CI executa etapas separadas para mostrar progresso e isolar falhas. Localmente,
+`./scripts/build_candidate.ps1 -Stage <etapa>` executa uma etapa; o padrão executa todas.
+O processo de autoteste é aguardado e seu JSON precisa indicar aprovação.

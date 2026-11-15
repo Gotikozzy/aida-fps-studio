@@ -26,6 +26,19 @@ def test_open_source_metadata_and_distribution_licenses_match():
     load_script("check_repository").main()
 
 
+def test_dependency_update_cannot_silently_leave_hashed_lock_stale(tmp_path):
+    checker = load_script("check_repository")
+    reference = tmp_path / "requirements-lock.txt"
+    reference.write_text("Example_Package==1.0\n", encoding="utf-8")
+    (tmp_path / "requirements-windows.lock").write_text(
+        "example-package==1.0 --hash=sha256:" + "0" * 64 + "\n", encoding="utf-8"
+    )
+    checker.check_python_locks(tmp_path)
+    reference.write_text("Example_Package==2.0\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="hashed Windows lock differ"):
+        checker.check_python_locks(tmp_path)
+
+
 def test_offline_marker_prevents_automatic_network_check(tmp_path, monkeypatch):
     from dg_fps.ui.update_flow import UpdateFlow
 

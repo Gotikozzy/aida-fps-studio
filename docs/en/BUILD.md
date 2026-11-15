@@ -39,3 +39,7 @@ Sign before final hashes. These builds aim for traceable inputs, not a promise o
 binary hashes across compilers, timestamps or signatures. GitHub CI must be run separately.
 
 [Other language / Outro idioma](../pt-BR/BUILD.md)
+
+CI runs candidate stages separately for visible progress and failure isolation. Locally,
+`./scripts/build_candidate.ps1 -Stage <stage>` runs one stage; the default runs all stages.
+The frozen self-test is awaited and its JSON status must pass before final packaging.

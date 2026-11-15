@@ -3,13 +3,29 @@
 from __future__ import annotations
 
 import json
+import re
 import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def check_python_locks(root: Path) -> None:
+    def pins(path: Path) -> dict[str, str]:
+        result = {}
+        for line in path.read_text("utf-8").splitlines():
+            if not line.strip() or line.lstrip().startswith("#"):
+                continue
+            name, version = line.split("==", 1)
+            result[re.sub(r"[-_.]+", "-", name.strip().lower())] = version.split()[0]
+        return result
+
+    if pins(root / "requirements-lock.txt") != pins(root / "requirements-windows.lock"):
+        raise ValueError("Reference versions and hashed Windows lock differ; review both together")
+
+
 def main() -> None:
+    check_python_locks(ROOT)
     metadata = tomllib.loads((ROOT / "pyproject.toml").read_text("utf-8"))["project"]
     assert metadata["license"] == "Apache-2.0"
     assert (

@@ -17,11 +17,46 @@ jobs:
       - name: Install reference Python dependencies
         run: |
           python -m pip install --require-hashes -r requirements-windows.lock
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m pip install --no-deps --no-build-isolation -e .
-      - name: Build from pinned sources and run candidate checks
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pip check
+      - name: Fetch and verify pinned inputs
         env:
           QT_QPA_PLATFORM: offscreen
-        run: ./scripts/build_candidate.ps1
+        run: ./scripts/build_candidate.ps1 -Stage prepare
+      - name: Compile the reference FFmpeg runtime
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: ./scripts/build_candidate.ps1 -Stage media
+      - name: Compile the optional NVIDIA bridge
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: ./scripts/build_candidate.ps1 -Stage native
+      - name: Test with the rebuilt media runtime
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: ./scripts/build_candidate.ps1 -Stage test
+      - name: Freeze application and package source
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: ./scripts/build_candidate.ps1 -Stage freeze
+      - name: Stage corresponding sources and review native composition
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: ./scripts/build_candidate.ps1 -Stage legal
+      - name: Build unsigned NSIS installer
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: ./scripts/build_candidate.ps1 -Stage installer
+      - name: Run frozen application self-test
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: ./scripts/build_candidate.ps1 -Stage smoke
+      - name: Prepare final candidate checksums
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: ./scripts/build_candidate.ps1 -Stage finalize
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: unsigned-windows-candidate
@@ -35,5 +70,6 @@ jobs:
             build/lgpl-native/configure.json
             build/lgpl-native/site/runtime-manifest.json
             build/self-test/
+            build/candidate-test-results.xml
             installer/distribution-review.json
           if-no-files-found: ignore

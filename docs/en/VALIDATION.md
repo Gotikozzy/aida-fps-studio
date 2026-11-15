@@ -22,3 +22,5 @@ index completion. Compare measurement outputs/PTS/provenance, not timing alone.
 Do not publish private source paths or clips; use distributable synthetic fixtures.
 
 [Other language / Outro idioma](../pt-BR/VALIDATION.md)
+
+[Verified GitHub candidate / Candidato verificado](../GITHUB_BUILD_VALIDATION.md).

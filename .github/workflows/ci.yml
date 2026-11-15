@@ -21,6 +21,8 @@ jobs:
           python -m pip install --require-hashes -r requirements-windows.lock
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m pip install --no-deps --no-build-isolation -e .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pip check
       - name: Check public source and measurement baseline
         run: |
           python scripts/check_repository.py

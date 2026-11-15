@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import pytest
-from PySide6.QtCore import QElapsedTimer, Qt
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QWidget
 
 from dg_fps.ui import splash as startup
@@ -20,8 +20,6 @@ def test_splash_waits_for_both_startup_and_minimum_time(qapp, qtbot, monkeypatch
     opened = []
 
     splash.start()
-    visible_for = QElapsedTimer()
-    visible_for.start()
     center = screen.availableGeometry().center()
     assert (splash.frameGeometry().center() - center).manhattanLength() <= 2
     qtbot.mouseClick(splash, Qt.MouseButton.LeftButton)
@@ -30,7 +28,9 @@ def test_splash_waits_for_both_startup_and_minimum_time(qapp, qtbot, monkeypatch
         qtbot.wait(startup_ms)
     assert not window.isVisible()
 
-    splash.reveal_when_ready(window, lambda: opened.append(visible_for.elapsed()))
+    # Observe the actual visibility epoch. A second timer started after start()
+    # loses scheduling time and can report an apparently early reveal on CI.
+    splash.reveal_when_ready(window, lambda: opened.append(splash._visible_for.elapsed()))
     if not startup_ms:
         assert splash.isVisible()
         assert not window.isVisible()

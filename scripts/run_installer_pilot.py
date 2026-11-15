@@ -84,11 +84,11 @@ def frozen_self_test(install: Path, output: Path) -> dict:
 
 
 def uninstall(install: Path) -> None:
-    # NSIS requires _?= last and unquoted, including spaces. This is a direct
-    # CreateProcess command line, never passed through cmd.exe or another shell.
-    command = subprocess.list2cmdline([str(install / "Uninstall.exe"), "/S"])
-    command += " _?=" + str(install)
-    result = subprocess.run(command, env=app_environment(), timeout=180, check=False)
+    # Normal NSIS self-removal relocates the uninstaller to TEMP. Do not pass _?=
+    # here: that option keeps it in place and prevents normal self-deletion.
+    result = subprocess.run(
+        [str(install / "Uninstall.exe"), "/S"], env=app_environment(), timeout=180, check=False
+    )
     if result.returncode:
         raise RuntimeError(f"Uninstaller exit: {result.returncode}")
     deadline = time.monotonic() + 30

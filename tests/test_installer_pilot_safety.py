@@ -6,6 +6,7 @@ import importlib.util
 import os
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 from zipfile import ZipFile
 
 import pytest
@@ -80,3 +81,17 @@ def test_artifact_hash_mismatch_never_retains_an_executable(tmp_path, monkeypatc
     with pytest.raises(ValueError, match="hash mismatch"):
         preparation.extract_installer(archive, tmp_path / "setup.exe", "0" * 64)
     assert not (tmp_path / "setup.exe").exists()
+
+
+def test_normal_uninstall_allows_nsis_temporary_self_relocation(tmp_path, monkeypatch):
+    pilot, _ = pilot_modules(monkeypatch)
+    calls = []
+
+    def invoke(arguments, **kwargs):
+        calls.append(arguments)
+        return SimpleNamespace(returncode=0)
+
+    monkeypatch.setattr(pilot.subprocess, "run", invoke)
+    monkeypatch.setattr(pilot, "registry_value", lambda *_: None)
+    pilot.uninstall(tmp_path)
+    assert calls == [[str(tmp_path / "Uninstall.exe"), "/S"]]

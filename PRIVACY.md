@@ -58,16 +58,15 @@ Nginx format reference / Formato: https://nginx.org/en/docs/http/ngx_http_log_mo
 ## Website analytics / Analytics do site
 
 EN: Website pages use **Google Analytics**, as reported by the operator. Use and retention
-follow the property's actual settings and applicable Google policies. The operator has not
-confirmed the property's numerical retention setting; this document does not assign one.
+follow the property's actual settings and applicable Google policies. The operator confirmed a **2-month user/event-data retention setting** on 2026-11-15.
 Google provides configurable retention controls; aggregated reports can have different
 retention behavior. This is separate from the VPS's monthly Nginx access-log retention.
 No Google Analytics SDK is part of the desktop application.
 
 PT: As páginas do site usam **Google Analytics**, conforme informado. O tratamento e a
 retenção seguem a configuração efetiva da propriedade e as políticas aplicáveis do Google.
-O prazo numérico configurado ainda não foi confirmado. O Google oferece controles de
-retenção e relatórios agregados podem ter tratamento diferente. Esse prazo é separado da
+O responsável confirmou retenção de **2 meses para dados de usuários/eventos** em
+2026-11-15. Relatórios agregados podem ter tratamento diferente segundo as regras do Google. Esse prazo é separado da
 retenção mensal dos logs Nginx. O aplicativo desktop não inclui SDK Google Analytics.
 
 [Google partner-site information / Informações sobre sites parceiros](https://policies.google.com/technologies/partner-sites?hl=pt-BR).

@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "scope": "exact installers on disposable Windows runner",
+  "checks": [
+    "fresh_0.8.15_exact_installer",
+    "fresh_frozen_cpu_analysis_export",
+    "fresh_uninstall_removes_owned_payload_and_registration",
+    "legacy_install_and_genuine_legacy_analysis_fixture",
+    "upgrade_waits_for_parent_and_preserves_settings_projects",
+    "upgrade_payload_matches_clean_install_and_retires_old_files",
+    "upgraded_frozen_cpu_analysis_export",
+    "normal_frozen_project_open_preserves_legacy_measurements",
+    "same_version_reinstall",
+    "downgrade_blocked_without_payload_changes",
+    "locked_executable_blocks_update_and_uninstall",
+    "start_menu_and_project_association_registered",
+    "uninstall_preserves_projects_video_settings_cache_and_unknown_files"
+  ],
+  "legacy_version": "0.8.14",
+  "legacy_sha256": "088e604644821a1bbfdf6f4e52b76978dcccb58b8774b46f1abb489a3ca40b8e",
+  "candidate_sha256": "330f08d0daf617804ea145d0d0594a19d19b16868f6dd6bc54c826d9319585b0",
+  "fresh_self_test": {
+    "status": "passed",
+    "frames": 16,
+    "codec": "H.264 CPU / BT.709",
+    "content_fps": 15.0,
+    "nvidia": {
+      "bridge_found": true,
+      "driver_available": false,
+      "gpus": [],
+      "nvenc": false,
+      "reason": "driver_missing"
+    },
+    "video_language": "en",
+    "video_branding": "AIDA"
+  },
+  "upgrade_self_test": {
+    "status": "passed",
+    "frames": 16,
+    "codec": "H.264 CPU / BT.709",
+    "content_fps": 15.0,
+    "nvidia": {
+      "bridge_found": true,
+      "driver_available": false,
+      "gpus": [],
+      "nvenc": false,
+      "reason": "driver_missing"
+    },
+    "video_language": "en",
+    "video_branding": "AIDA"
+  },
+  "project_open": {
+    "window_caption_verified": true,
+    "clean_exit": true,
+    "restored_analysis_sha256": "808b68015961cc20fcb7aa2153219d5990d3520b745aae012ae9b8acb416f694"
+  },
+  "workflow_run": 43765520723,
+  "artifact_id": 14182182068
+}

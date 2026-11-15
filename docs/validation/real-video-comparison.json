@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "baseline_app": "0.8.14",
+  "candidate_app": "0.8.15",
+  "baseline_ffmpeg": "8.0.1",
+  "candidate_ffmpeg": "8.0.1",
+  "scope": "Four existing real-video windows of 120 frames, serial CPU/NVIDIA, old validated runtime versus GitHub-built native media/bridge; private paths and footage are not published",
+  "excluded_from_analysis_comparison": [
+    "findings[].id (generated UUID)",
+    "native_library (version-specific path)"
+  ],
+  "cases": [
+    {
+      "name": "reference-1",
+      "decoded_frames": 120,
+      "pixels_pts_and_signal_equal": true,
+      "cpu_analysis_equal": true,
+      "nvidia_analysis_equal": true
+    },
+    {
+      "name": "reference-2",
+      "decoded_frames": 120,
+      "pixels_pts_and_signal_equal": true,
+      "cpu_analysis_equal": true,
+      "nvidia_analysis_equal": true
+    },
+    {
+      "name": "reference-3",
+      "decoded_frames": 120,
+      "pixels_pts_and_signal_equal": true,
+      "cpu_analysis_equal": true,
+      "nvidia_analysis_equal": true
+    },
+    {
+      "name": "reference-4",
+      "decoded_frames": 120,
+      "pixels_pts_and_signal_equal": true,
+      "cpu_analysis_equal": true,
+      "nvidia_analysis_equal": true
+    }
+  ]
+}

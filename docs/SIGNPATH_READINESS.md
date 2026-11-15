@@ -16,7 +16,7 @@ Este checklist não declara aprovação. Itens preparados referem-se apenas ao p
 - [x] Python build-input CycloneDX inventory recorded; complete release SBOM review remains pending.
 - [x] Downloaded/verified build inputs and staged corresponding sources during the clean build.
 - [x] Six native GPU vector/magnitude cases exactly match 0.8.14 on RTX 2080 SUPER.
-- [ ] Complete broader real-video CPU/GPU regression and installation/upgrade/uninstall pilot.
+- [x] Four real-video CPU/GPU windows matched; installer/upgrade/uninstall pilot passed for 0.8.12 and 0.8.14 (see scoped evidence).
 - [x] Protect main with PR/CI requirements; enable private security reports.
 - [x] Configure signing-production with owner approval; SIGNPATH_ENABLED remains false.
 - [x] GitHub owner confirmed MFA enabled on 2026-11-15 (owner declaration).

@@ -50,16 +50,40 @@ Downloaded files match GitHub's digest and the embedded final checksums. Install
 FileVersion is 0.8.15; Authenticode status is **NotSigned**. SignPath remains disabled.
 Hashes conferidos; versão 0.8.15; assinatura ausente conforme esperado nesta etapa.
 
+## Additional regression / Regressão adicional
+
+Four private real-video windows of 120 frames each (480 total) matched between
+0.8.14 and 0.8.15: decoded pixels, PTS/time base, signals and CPU/NVIDIA analysis
+results. Only generated finding UUIDs and the native-library filesystem path were
+excluded from analysis comparison. GPU calls ran sequentially on RTX 2080 SUPER.
+The candidate used the GitHub-built native media/bridge with pinned PyAV Python
+wrappers in an isolated Python environment. This was not a full frozen-EXE video
+comparison, a whole-dataset validation or a performance benchmark. Private footage
+and paths are not published. [Sanitized summary](validation/real-video-comparison.json).
+
+Quatro trechos reais de 120 quadros produziram os mesmos pixels, PTS/time base,
+sinais e resultados CPU/NVIDIA. Apenas UUIDs gerados e caminho da biblioteca foram
+excluídos da comparação. O teste usa runtime nativo do GitHub em Python isolado;
+não é comparação integral de vídeos pelo EXE congelado nem benchmark.
+
+The [original-installer pilot](INSTALLER_PILOT.md) passed all 13 checks for each
+legacy version (0.8.12 and 0.8.14), including frozen CPU analysis/export, normal
+project opening, reinstall, downgrade/lock refusal and safe uninstall.
+CI for the added pilot checks passed **419 tests**; the original native-build run
+above retains its own 411-test count.
+
+O piloto dos instaladores originais passou nas duas versões. A CI com os controles
+adicionais passou em 419 testes; o build nativo original permanece documentado com 411.
+
 ## Limits and next gates / Limites e próximas etapas
 
-The hosted runner has no NVIDIA driver, so numerical GPU comparison was performed
-locally on the stated GPU. The synthetic comparison is narrow. The installer was
-extracted for validation, not installed over the user's working application. A clean
-install/upgrade/uninstall pilot, complete release SBOM review, Foundation onboarding,
-system-library acceptance and inner-file/uninstaller signing are still required.
+The hosted runner has no NVIDIA driver; numerical GPU comparisons were local.
+The real-video comparison covers sampled windows only. The installer pilot used
+disposable GitHub VMs and did not touch the user's working installation. Complete
+release SBOM review, Foundation onboarding, system-library acceptance and
+inner-file/uninstaller signing remain required.
 
-O runner não possui driver NVIDIA. A comparação GPU foi local e restrita a seis casos.
-A validação não instalou o produto sobre a versão em uso. Piloto de instalação/upgrade/
-desinstalação, revisão final do SBOM, onboarding e assinatura completa continuam pendentes.
-No site update manifest was published by this build. Nenhum manifesto de atualização
-foi publicado no site por este build.
+O runner não tem driver NVIDIA. Os testes locais de GPU e os trechos reais têm
+escopo delimitado. A instalação foi testada em VMs descartáveis. Revisão completa
+do SBOM, onboarding, aceite das bibliotecas de sistema e assinatura continuam pendentes.
+No site update manifest was published. Nenhum manifesto de atualização foi publicado.

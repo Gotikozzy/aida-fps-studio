@@ -1,0 +1,14 @@
+<!-- Candidate configuration: import/review in SignPath during onboarding.
+     It signs only the outer setup EXE, never third-party DLLs.
+     Set repository/branch/origin constraints and manual approval in SignPath. -->
+<artifact-configuration xmlns="http://signpath.io/artifact-configuration/v1">
+  <parameters>
+    <parameter name="version" required="true" />
+  </parameters>
+  <zip-file>
+    <pe-file path="AIDA-FPS-Studio-${version}-windows-x64-setup.exe"
+             product-name="AIDA FPS Studio" product-version="${version}">
+      <authenticode-sign />
+    </pe-file>
+  </zip-file>
+</artifact-configuration>

@@ -1,0 +1,7 @@
+[
+  {
+    "file": "cuda_cudart-windows-x86_64-12.6.77-archive.zip",
+    "url": "https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/windows-x86_64/cuda_cudart-windows-x86_64-12.6.77-archive.zip",
+    "sha256": "7a313bc0c93b1a50bb03aa9783a199ae70c3b66e2d8084da65e8254a8577b925"
+  }
+]

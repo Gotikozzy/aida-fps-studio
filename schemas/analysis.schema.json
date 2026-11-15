@@ -1,0 +1,470 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dg-fps:analysis:1.4",
+  "title": "DG FPS — Análise completa de cadência",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "application",
+    "project",
+    "source",
+    "analyzer",
+    "parameters",
+    "summary",
+    "frames",
+    "events",
+    "findings",
+    "limitations",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "1.0",
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4"
+      ]
+    },
+    "application": {
+      "$ref": "#/$defs/application"
+    },
+    "project": {
+      "$ref": "#/$defs/project"
+    },
+    "source": {
+      "type": "object"
+    },
+    "analyzer": {
+      "$ref": "#/$defs/analyzer"
+    },
+    "parameters": {
+      "type": "object"
+    },
+    "summary": {
+      "$ref": "#/$defs/cadenceSummary"
+    },
+    "presentation": {
+      "type": "object"
+    },
+    "selected_ranges": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "segment_summaries": {
+      "type": "object"
+    },
+    "assets": {
+      "type": "object"
+    },
+    "frames": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "frame_index",
+          "segment",
+          "timestamp_seconds",
+          "similarity_to_previous",
+          "mean_absolute_difference",
+          "repeated"
+        ],
+        "properties": {
+          "segment": {
+            "type": "string",
+            "minLength": 1
+          },
+          "frame_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "timestamp_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "similarity_to_previous": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "mean_absolute_difference": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "repeated": {
+            "type": "boolean"
+          },
+          "normalized_difference": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "changed_block_ratio": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "edge_change_ratio": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "flow_support_ratio": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "flow_confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "flow_magnitude_px": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "timestamp_valid": {
+            "type": "boolean"
+          },
+          "pts": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "time_base": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "signal_state": {
+            "type": "string"
+          },
+          "flow_backend": {
+            "type": "string"
+          },
+          "flow_backend_version": {
+            "type": "string"
+          },
+          "flow_parameters": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "cadence_repeated": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "observed_duration_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "held_since_seconds": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "resumed_at_seconds": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "reference_hold_ms": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "closed": {
+            "type": "boolean"
+          },
+          "cause": {
+            "const": "undetermined"
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "content_cadence": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "content_fps",
+          "capture_fps",
+          "status",
+          "complete_update_intervals",
+          "median_hold_ms",
+          "longest_hold_ms"
+        ],
+        "properties": {
+          "content_fps": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "capture_fps": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "status": {
+            "type": "string"
+          },
+          "complete_update_intervals": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "median_hold_ms": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "longest_hold_ms": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "pending_hold_ms": {
+            "type": "number",
+            "minimum": 0
+          },
+          "reference_fps": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "application": {
+      "type": "object",
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "project": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "generated_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "analyzer": {
+      "type": "object",
+      "required": [
+        "id",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "cadenceSummary": {
+      "type": "object",
+      "required": [
+        "total_frames",
+        "unique_frames",
+        "repeated_frames",
+        "repeated_ratio",
+        "container_fps",
+        "estimated_unique_fps",
+        "temporal_irregularity",
+        "duration_seconds"
+      ],
+      "properties": {
+        "total_frames": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unique_frames": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "repeated_frames": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "repeated_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "container_fps": {
+          "type": "number",
+          "minimum": 0
+        },
+        "estimated_unique_fps": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "temporal_irregularity": {
+          "type": "number",
+          "minimum": 0
+        },
+        "duration_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "content_fps": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "content_status": {
+          "type": "string"
+        },
+        "observed_capture_fps": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "observable_window_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "timing_status": {
+          "type": "string"
+        },
+        "observed_intervals": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "measurable_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "ambiguous_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "retained_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "complete_period_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "prolonged_retention_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "complete_period_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "measurement_scope": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

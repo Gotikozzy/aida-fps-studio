@@ -1,0 +1,49 @@
+AIDA FPS Studio 0.8.15 — Open source / Código aberto
+
+PORTUGUÊS
+
+O código próprio é disponibilizado sob a licença Apache-2.0, cujo texto oficial
+acompanha esta instalação em LICENSE.txt. Você pode usar, estudar, modificar e
+redistribuir conforme essa licença. Esta explicação não acrescenta restrições.
+Bibliotecas e materiais de terceiros conservam suas próprias licenças e avisos.
+Seus vídeos, projetos e resultados permanecem seus; usar o AIDA não exige publicá-los.
+O software é fornecido sem garantias, nos limites da licença e da legislação aplicável.
+A marca AIDA FPS Studio não implica aprovação de versões modificadas.
+
+Privacidade: o processamento de vídeos e análises é local. Na abertura o aplicativo
+consulta https://detonandogueek.com.br/aida/update.json para verificar a versão.
+O servidor recebe dados usuais da conexão, como IP. Não enviamos vídeos, projetos,
+frames ou resultados. Baixar e executar uma atualização exige confirmação.
+Para desativar consultas automáticas, instale o componente opcional de modo offline,
+ou crie um arquivo vazio .disable-update-check na pasta do programa. Apague esse
+arquivo para reativá-las. O modo offline não muda as medições.
+Diagnósticos e logs locais podem conter caminhos; revise-os antes de compartilhar.
+
+Assinatura: esta distribuição preparada localmente não foi assinada pela SignPath.
+A candidatura e a configuração de assinatura dependem de revisão e aprovação.
+As licenças LGPL permitem substituir bibliotecas compatíveis e depurar alterações.
+O catálogo de licenças e fontes correspondentes acompanha o instalador público.
+
+ENGLISH
+
+Application code is licensed under Apache-2.0. The authoritative license is included
+as LICENSE.txt. You may use, study, modify and redistribute under that license.
+This explanation adds no restrictions. Third-party libraries and materials retain
+their respective licenses and notices. Your videos, projects and results remain yours;
+using AIDA does not require publishing them. The software is provided without
+warranties to the extent allowed by the license and applicable law.
+The AIDA FPS Studio name does not imply endorsement of modified distributions.
+
+Privacy: video processing and analysis are local. On startup the application checks
+https://detonandogueek.com.br/aida/update.json for a newer version. The server receives
+normal connection metadata, including IP. Videos, projects, frames and results are
+not uploaded. Downloading and launching an update requires confirmation.
+Disable automatic checks by installing the optional offline-mode component or by
+creating an empty .disable-update-check file in the program directory. Delete that
+file to re-enable checks. Offline mode does not change measurements.
+Local diagnostics and logs may contain paths; review them before sharing.
+
+Signing: this locally prepared distribution has not been signed by SignPath.
+Enrollment and signing configuration require review and approval.
+LGPL rights to replace compatible libraries and debug changes are preserved.
+The public installer includes the license catalog and corresponding library sources.

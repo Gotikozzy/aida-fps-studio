@@ -1,0 +1,9 @@
+AIDA FPS Studio
+Copyright 2026 Detonando Gueek
+
+Application code is licensed under Apache License, Version 2.0.
+Original notices and licenses govern third-party components, including the
+MIT NVIDIA helper files and the adapted PyInstaller hook. This notice does
+not relicense third-party works. See THIRD_PARTY_NOTICES.md and LICENSES/.
+The project name and logos identify the project; no endorsement of forks
+is implied. User videos, projects and analysis results remain user content.

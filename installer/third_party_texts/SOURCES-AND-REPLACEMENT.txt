@@ -1,0 +1,62 @@
+AIDA FPS Studio — fontes de terceiros / third-party source and replacement
+
+PORTUGUÊS
+
+As bibliotecas Qt, PySide/Shiboken e FFmpeg são usadas sob suas opções LGPL.
+Os termos do AIDA preservam os direitos dessas licenças. Não é necessário liberar
+o código do projeto ou dos vídeos do usuário. O código próprio do AIDA 0.8.15 usa Apache-2.0; os fontes e instruções abaixo
+referem-se às bibliotecas de terceiros.
+
+Os fontes completos acompanham esta instalação em third_party_licenses/sources:
+
+- qtbase-6.12.0.tar.gz: Qt Core, Gui, Widgets, Network e plugins do Qt Base.
+- qtsvg-6.12.0.tar.gz: Qt SVG e respectivos plugins.
+- qtimageformats-6.12.0.tar.gz: plugins adicionais de formatos de imagem.
+- pyside-setup-6.12.0.tar.xz: bindings PySide e Shiboken.
+- aida-media-corresponding-sources.zip: FFmpeg 8.0.1, OpenH264 2.6.0,
+  dav1d 1.5.1, nv-codec-headers 12.1.14.0 e instruções/argumentos de build.
+
+Esses fontes upstream não foram alterados. O ajuste de vinculação do binding BSD
+PyAV 16.1.0 troca somente os nomes das DLLs importadas por nomes FFmpeg padrão.
+O procedimento e os hashes estão no material de mídia. O runtime não inclui x264,
+x265 nem componentes FFmpeg habilitados por --enable-gpl ou --enable-nonfree.
+
+Para reconstruir Qt/PySide, use os arquivos da versão indicada e as instruções de
+build presentes nos próprios fontes, com CMake e Visual Studio 2022 x64. Use a
+opção compartilhada (shared) do Qt. Os arquivos de biblioteca ficam em
+_internal/PySide6 e _internal/shiboken6; mantenha os nomes e a ABI da versão 6.
+Para FFmpeg, as DLLs compartilhadas ficam em _internal/av.libs. O material de mídia
+traz as instruções e versões das ferramentas usadas para a compilação.
+
+Faça uma cópia da instalação antes de substituir bibliotecas. É permitido usar,
+substituir e depurar modificações nas bibliotecas nos limites de suas licenças,
+inclusive engenharia reversa para depuração dessas modificações. Não há trava
+de assinatura ou checksum que impeça a substituição das bibliotecas instaladas.
+A ABI e as funções exigidas pelo aplicativo precisam continuar compatíveis.
+
+ENGLISH
+
+Qt, PySide/Shiboken and FFmpeg are used under their LGPL options. The AIDA terms
+preserve those rights. User projects and videos do not need to be published.
+AIDA 0.8.15 application code is licensed under Apache-2.0; these sources and
+instructions concern third-party libraries.
+
+Complete upstream sources accompany this installation in third_party_licenses/sources:
+Qt Base 6.12.0, Qt SVG 6.12.0, Qt Image Formats 6.12.0, PySide/Shiboken 6.12.0 and
+aida-media-corresponding-sources.zip. The media archive includes FFmpeg 8.0.1,
+OpenH264 2.6.0, dav1d 1.5.1, nv-codec-headers 12.1.14.0 and build instructions.
+
+These upstream sources are unmodified. BSD PyAV 16.1.0 is rebound only by changing
+PE import library names to standard FFmpeg DLL names; procedures and hashes are
+provided with the media material. No x264/x265, --enable-gpl or --enable-nonfree
+components are included in the media runtime.
+
+Build shared Qt/PySide using their supplied instructions, CMake and Visual Studio
+2022 x64. Qt/PySide libraries are under _internal/PySide6 and _internal/shiboken6;
+preserve the Qt 6 ABI and library names. FFmpeg shared libraries are under
+_internal/av.libs; build instructions and tool versions are in the media archive.
+
+Back up the installation before replacing libraries. Their licenses permit
+replacement and debugging of modifications, including reverse engineering for
+debugging those modifications. Installed libraries are not signature/checksum
+locked. The ABI and functions required by the application must remain compatible.

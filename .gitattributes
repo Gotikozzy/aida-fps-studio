@@ -1,0 +1,17 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.ps1 text eol=crlf
+*.nsi text eol=crlf
+*.png binary
+*.jpg binary
+*.ico binary
+
+# Preserve byte-exact imported measurement sources across Git checkouts.
+src/dg_fps/** -text
+native/**/*.cpp -text
+native/**/*.h -text
+native/*.cpp -text
+native/*.h -text

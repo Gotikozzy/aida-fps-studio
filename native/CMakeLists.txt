@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.20)
+project(dg_fps_optical_flow LANGUAGES CXX RC)
+if(AIDA_CUDA_DRIVER_ROOT)
+    add_library(aida_cuda_driver INTERFACE)
+    target_include_directories(aida_cuda_driver INTERFACE "${AIDA_CUDA_DRIVER_ROOT}/include")
+    target_link_libraries(aida_cuda_driver INTERFACE "${AIDA_CUDA_DRIVER_ROOT}/lib/x64/cuda.lib")
+    add_library(CUDA::cuda_driver ALIAS aida_cuda_driver)
+else()
+    find_package(CUDAToolkit 11.0 REQUIRED)
+endif()
+configure_file(version.rc.in "${CMAKE_CURRENT_BINARY_DIR}/version.rc" @ONLY)
+add_library(dg_nvidia_optical_flow SHARED
+    dg_nvidia_optical_flow.cpp vendor/NvOF.cpp vendor/NvOFCuda.cpp "${CMAKE_CURRENT_BINARY_DIR}/version.rc")
+target_compile_features(dg_nvidia_optical_flow PRIVATE cxx_std_17)
+target_compile_definitions(dg_nvidia_optical_flow PRIVATE WIN32_LEAN_AND_MEAN)
+target_include_directories(dg_nvidia_optical_flow PRIVATE vendor)
+target_link_libraries(dg_nvidia_optical_flow PRIVATE CUDA::cuda_driver)
+set_target_properties(dg_nvidia_optical_flow PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../src/dg_fps/_native"
+    RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_CURRENT_SOURCE_DIR}/../src/dg_fps/_native")

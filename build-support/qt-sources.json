@@ -1,0 +1,22 @@
+[
+  {
+    "file": "qtbase-6.12.0.tar.gz",
+    "url": "https://codeload.github.com/qt/qtbase/tar.gz/refs/tags/v6.12.0",
+    "sha256": "dff6570582c272cbe744d2e460700318262af505460f4215276459970ae31b46"
+  },
+  {
+    "file": "qtsvg-6.12.0.tar.gz",
+    "url": "https://codeload.github.com/qt/qtsvg/tar.gz/refs/tags/v6.12.0",
+    "sha256": "38d440c4e97c90ce4f5b76c65dcd63d716d2ef4852baa6fb0926fb94bb96ea66"
+  },
+  {
+    "file": "pyside-setup-6.12.0.tar.xz",
+    "url": "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.12.0-src/pyside-setup-everywhere-src-6.12.0.tar.xz",
+    "sha256": "099c1a597cf33c1b000e11cf68a0b82d216fb802bf81726efc720394f10c7751"
+  },
+  {
+    "file": "qtimageformats-6.12.0.tar.gz",
+    "url": "https://codeload.github.com/qt/qtimageformats/tar.gz/refs/tags/v6.12.0",
+    "sha256": "9848d06aa4453cf583dc6ec4ec148ade05f3981c0f91b0961297385d3297b02a"
+  }
+]

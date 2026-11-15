@@ -1,0 +1,20 @@
+name: Bug report / Relatar problema
+description: Reproducible behavior; no private video upload required / Falha reproduzível
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: Version, Windows, CPU/GPU, driver / Versão e ambiente
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps and expected/actual behavior / Passos e resultado
+      description: Use synthetic examples; remove personal paths / Remova caminhos pessoais
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Reviewed diagnostics or minimal example / Diagnóstico revisado

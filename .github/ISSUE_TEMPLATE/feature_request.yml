@@ -1,0 +1,13 @@
+name: Feature request / Sugestão
+description: Propose a focused improvement / Proponha uma melhoria
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and acceptance criteria / Problema e critérios de aceitação
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Evidence, alternatives and measurement impact / Evidência e impacto

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dg-fps:llm-report:1.0.0",
+  "title": "AIDA local measurement and decision context for LLM readers",
+  "type": "object",
+  "required": ["schema_version", "report_type", "generated_at", "provenance", "measurement_contract", "segments", "limitations", "llm_reporting_guidance"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "report_type": {"const": "aida_llm_measurement_context"},
+    "generated_at": {"type": "string"},
+    "provenance": {
+      "type": "object",
+      "required": ["analysis_file", "analysis_sha256", "analyzer", "cadence_reader_version", "parameters", "flow_backends"],
+      "properties": {"analysis_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "measurement_contract": {
+      "type": "object",
+      "required": ["scope", "shared_update_decision", "capture_fps", "unknown"],
+      "properties": {"capture_fps": {"type": "number", "minimum": 0}}
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["segment", "source_frames", "source_seconds", "measurement", "closed_scene_update_periods_ms", "decisions", "references", "per_second"],
+        "properties": {
+          "measurement": {
+            "type": "object",
+            "required": ["classification", "observable_coverage", "ambiguous_seconds"],
+            "properties": {
+              "observable_coverage": {"type": "number", "minimum": 0, "maximum": 1.000000001},
+              "ambiguous_seconds": {"type": "number", "minimum": 0}
+            }
+          },
+          "per_second": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["measured_fps", "displayed_fps", "origin", "reason", "coverage"],
+              "properties": {
+                "measured_fps": {"type": ["number", "null"]},
+                "displayed_fps": {"type": ["number", "null"]},
+                "origin": {"enum": ["measured", "reference", "none"]}
+              }
+            }
+          }
+        }
+      }
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "llm_reporting_guidance": {"type": "object", "required": ["suggested_max_words", "structure", "rules"]}
+  }
+}

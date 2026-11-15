@@ -1,0 +1,18 @@
+include README.md README.pt-BR.md LICENSE NOTICE THIRD_PARTY_NOTICES.md SPECIFICATION.md AGENTS.md
+include CONTRIBUTING.md SECURITY.md CODE_OF_CONDUCT.md CODE_SIGNING.md PRIVACY.md CHANGELOG.md
+include ARCHITECTURE.md VALIDATION.md requirements-lock.txt
+recursive-include docs *.md
+recursive-include LICENSES *
+recursive-include build-support *.json
+recursive-include installer *.nsi *.txt *.json *.md
+recursive-include schemas *.json
+recursive-include tests *.py
+recursive-include scripts *.py *.ps1
+recursive-include native *.cpp *.h *.txt *.in
+recursive-include src/dg_fps/assets *.png *.ico *.jpg
+prune installer/corresponding-sources
+prune installer/third_party_texts/qt-upstream
+global-exclude *.dll *.pyd *.pyc
+
+include requirements-windows.lock
+recursive-include build-support *.xml

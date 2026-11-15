@@ -1,0 +1,32 @@
+[
+  {
+    "file": "w64devkit-x64-2.11.0.7z.exe",
+    "url": "https://github.com/skeeto/w64devkit/releases/download/v2.11.0/w64devkit-x64-2.11.0.7z.exe",
+    "sha256": "54c2bb9962e8a30c8270e34c5efc3d5fee579f53087fa7d435b95fbba2af7b2b"
+  },
+  {
+    "file": "ffmpeg-8.0.1.tar.xz",
+    "url": "https://ffmpeg.org/releases/ffmpeg-8.0.1.tar.xz",
+    "sha256": "05ee0b03119b45c0bdb4df654b96802e909e0a752f72e4fe3794f487229e5a41"
+  },
+  {
+    "file": "openh264-v2.6.0.tar.gz",
+    "url": "https://codeload.github.com/cisco/openh264/tar.gz/refs/tags/v2.6.0",
+    "sha256": "558544ad358283a7ab2930d69a9ceddf913f4a51ee9bf1bfb9e377322af81a69"
+  },
+  {
+    "file": "nv-codec-headers-12.1.14.0.tar.gz",
+    "url": "https://codeload.github.com/FFmpeg/nv-codec-headers/tar.gz/refs/tags/n12.1.14.0",
+    "sha256": "2fefaa227d2a3b4170797796425a59d1dd2ed5fd231db9b4244468ba327acd0b"
+  },
+  {
+    "file": "dav1d-1.5.1.tar.gz",
+    "url": "https://codeload.github.com/videolan/dav1d/tar.gz/refs/tags/1.5.1",
+    "sha256": "fa635e2bdb25147b1384007c83e15de44c589582bb3b9a53fc1579cb9d74b695"
+  },
+  {
+    "file": "nasm-2.16.03-win64.zip",
+    "url": "https://www.nasm.us/pub/nasm/releasebuilds/2.16.03/win64/nasm-2.16.03-win64.zip",
+    "sha256": "3ee4782247bcb874378d02f7eab4e294a84d3d15f3f6ee2de2f47a46aa7226e6"
+  }
+]

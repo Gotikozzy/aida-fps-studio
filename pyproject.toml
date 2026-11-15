@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aida-fps-studio"
+version = "0.8.15"
+description = "Native Windows video cadence and observable FPS analysis studio"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md"]
+authors = [{name = "Detonando Gueek"}]
+requires-python = ">=3.12,<3.13"
+dependencies = ["PySide6-Essentials>=6.8,<7", "av>=14,<17", "numpy>=2,<3", "opencv-python>=4.10,<5", "platformdirs>=4.3,<5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<9", "pytest-qt>=4.4,<5", "ruff>=0.9,<1", "build>=1,<2", "pyinstaller>=6.11,<7"]
+
+[project.gui-scripts]
+aida-fps-studio = "dg_fps.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+dg_fps = ["_native/*.dll", "assets/*.png", "assets/*.ico", "assets/*.jpg"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

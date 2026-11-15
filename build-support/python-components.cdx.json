@@ -1,0 +1,528 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "serialNumber": "urn:uuid:91326054-8fdf-58f0-a8a6-447f2c5a7d48",
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "AIDA FPS Studio Python build inputs",
+      "version": "0.8.15"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "altgraph",
+      "version": "0.17.5",
+      "bom-ref": "pkg:pypi/altgraph@0.17.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f3a22400bce1b0c701683820ac4f3b159cd301acab067c51c653e06961600597"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "av",
+      "version": "16.1.0",
+      "bom-ref": "pkg:pypi/av@16.1.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f49243b1d27c91cd8c66fdba90a674e344eb8eb917264f36117bf2b6879118fd"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "build",
+      "version": "1.6.1",
+      "bom-ref": "pkg:pypi/build@1.6.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ecd351a4be9d35a9eaaba244a7687143c9c7d4aea6ac964e7e7ddab20cbcf4e7"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "colorama",
+      "version": "0.4.6",
+      "bom-ref": "pkg:pypi/colorama@0.4.6",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "bom-ref": "pkg:pypi/iniconfig@2.3.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "meson",
+      "version": "1.9.1",
+      "bom-ref": "pkg:pypi/meson@1.9.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f824ab770c041a202f532f69e114c971918ed2daff7ea56583d80642564598d0"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ninja",
+      "version": "1.13.0",
+      "bom-ref": "pkg:pypi/ninja@1.13.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fb8ee8719f8af47fed145cced4a85f0755dd55d45b2bddaf7431fa89803c5f3e"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "numpy",
+      "version": "2.5.4",
+      "bom-ref": "pkg:pypi/numpy@2.5.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a7b1b6353e36a7e50de2973a38d705c88ee93adcf120673cee7f45a4a3fa223a"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "opencv-python",
+      "version": "4.14.0.94",
+      "bom-ref": "pkg:pypi/opencv-python@4.14.0.94",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ace53616cdffc9643e17e075397b493e607c427d388c7508798ef7ad2ed577cc"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "packaging",
+      "version": "26.3",
+      "bom-ref": "pkg:pypi/packaging@26.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR BSD-2-Clause"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pefile",
+      "version": "2024.8.26",
+      "bom-ref": "pkg:pypi/pefile@2024.8.26",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "76f8b485dcd3b1bb8166f1128d395fa3d87af26360c2358fb75b80019b957c6f"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pip",
+      "version": "24.2",
+      "bom-ref": "pkg:pypi/pip@24.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2cd581cf58ab7fcfca4ce8efa6dcacd0de5bf8d0a3eb9ec927e07405f4d9e2a2"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "platformdirs",
+      "version": "4.14.5",
+      "bom-ref": "pkg:pypi/platformdirs@4.14.5",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8e778c6fa421516f4d3369449f8df3b0e1b72c0e0005fe88e3ec772d0a14e750"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pluggy",
+      "version": "1.7.0",
+      "bom-ref": "pkg:pypi/pluggy@1.7.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "Pygments",
+      "version": "2.21.0",
+      "bom-ref": "pkg:pypi/pygments@2.21.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-2-Clause"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pyinstaller",
+      "version": "6.22.3",
+      "bom-ref": "pkg:pypi/pyinstaller@6.22.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "500bd58c7bf7e584a8435adccbd763a0b918d5c12b08d74ff50fd79b2915458b"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pyinstaller-hooks-contrib",
+      "version": "2026.9",
+      "bom-ref": "pkg:pypi/pyinstaller-hooks-contrib@2026.9",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fb3e67dd64122561724c48ad0366ac9e8c16e638b63bf7d85de03bf3fdbf06c3"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pyproject_hooks",
+      "version": "1.3.3",
+      "bom-ref": "pkg:pypi/pyproject-hooks@1.3.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5fc53fdac9f7bd63fbcdc868fb5f90b4784d78a53a3d3388cd738b807441a20b"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "PySide6_Essentials",
+      "version": "6.12.0",
+      "bom-ref": "pkg:pypi/pyside6-essentials@6.12.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c9a95102aa23c1f86516a30d5a9be37552d324eee7e567eb7508973f1218cb42"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pytest",
+      "version": "8.4.2",
+      "bom-ref": "pkg:pypi/pytest@8.4.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "872f880de3fc3a5bdc88a11b39c9710c3497a547cfa9320bc3c5e62fbf272e79"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pytest-qt",
+      "version": "4.5.0",
+      "bom-ref": "pkg:pypi/pytest-qt@4.5.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ed21ea9b861247f7d18090a26bfbda8fb51d7a8a7b6f776157426ff2ccf26eff"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pywin32-ctypes",
+      "version": "0.2.3",
+      "bom-ref": "pkg:pypi/pywin32-ctypes@0.2.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8a1513379d709975552d202d942d9837758905c8d01eb82b8bcc30918929e7b8"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ruff",
+      "version": "0.17.4",
+      "bom-ref": "pkg:pypi/ruff@0.17.4",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "67c5a894fc054cf41f75f7afa24815de5a74329d97634126c2a1015740ff4e8c"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "setuptools",
+      "version": "84.2.1",
+      "bom-ref": "pkg:pypi/setuptools@84.2.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "shiboken6",
+      "version": "6.12.0",
+      "bom-ref": "pkg:pypi/shiboken6@6.12.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a1906cb8116869178c64b6bab52623bbc8b4ceed7b30bfc3c9aa0f6e67f6438e"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "bom-ref": "pkg:pypi/typing-extensions@4.16.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "PSF-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "wheel",
+      "version": "0.45.1",
+      "bom-ref": "pkg:pypi/wheel@0.45.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "See upstream license files and THIRD_PARTY_NOTICES.md"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248"
+        }
+      ]
+    }
+  ]
+}

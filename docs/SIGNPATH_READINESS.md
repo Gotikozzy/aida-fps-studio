@@ -13,7 +13,7 @@ Este checklist não declara aprovação. Itens preparados referem-se apenas ao p
 - [x] Owner confirmed image redistribution rights on 2026-11-15; see docs/ASSETS.md.
 - [ ] Confirm system-library exception with SignPath for Microsoft runtime/driver usage.
 - [x] Clean GitHub-hosted native build, 411 tests, hashes and technical native inventory (138 files).
-- [x] Python build-input CycloneDX inventory recorded; complete release SBOM review remains pending.
+- [x] Python build-input and extracted-candidate CycloneDX inventories recorded; see docs/RELEASE_SBOM.md for coverage/limits.
 - [x] Downloaded/verified build inputs and staged corresponding sources during the clean build.
 - [x] Six native GPU vector/magnitude cases exactly match 0.8.14 on RTX 2080 SUPER.
 - [x] Four real-video CPU/GPU windows matched; installer/upgrade/uninstall pilot passed for 0.8.12 and 0.8.14 (see scoped evidence).

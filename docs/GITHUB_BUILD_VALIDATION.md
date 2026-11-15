@@ -79,11 +79,9 @@ adicionais passou em 419 testes; o build nativo original permanece documentado c
 
 The hosted runner has no NVIDIA driver; numerical GPU comparisons were local.
 The real-video comparison covers sampled windows only. The installer pilot used
-disposable GitHub VMs and did not touch the user's working installation. Complete
-release SBOM review, Foundation onboarding, system-library acceptance and
+disposable GitHub VMs and did not touch the user's working installation. The [candidate SBOM](RELEASE_SBOM.md) is recorded. Foundation onboarding, system-library acceptance and
 inner-file/uninstaller signing remain required.
 
 O runner não tem driver NVIDIA. Os testes locais de GPU e os trechos reais têm
-escopo delimitado. A instalação foi testada em VMs descartáveis. Revisão completa
-do SBOM, onboarding, aceite das bibliotecas de sistema e assinatura continuam pendentes.
+escopo delimitado. A instalação foi testada em VMs descartáveis. O SBOM do candidato está registrado; onboarding, aceite das bibliotecas de sistema e assinatura continuam pendentes.
 No site update manifest was published. Nenhum manifesto de atualização foi publicado.

@@ -43,3 +43,24 @@ Executar em Actions, workflow indicado, branch main. Resultado em `pilot.json` d
 `passed`. Esta validação não substitui regressão ampla de vídeos reais/GPU.
 
 A matriz testa separadamente upgrades da versão pública 0.8.12 e da referência 0.8.14.
+
+## Verified run / Execução conferida
+
+[Run 43765520723](https://github.com/Gotikozzy/aida-fps-studio/actions/runs/43765520723)
+completed successfully for **both 0.8.12 and 0.8.14** on 2026-11-15. Each report
+records all 13 checks as passed, including normal project opening with byte-identical
+restored legacy analysis and a clean application exit. Both installed CPU export
+self-tests passed. Window evidence was inspected; this is functional evidence,
+not a full UI layout audit. No production installation or site manifest was changed.
+
+A execução passou nas duas referências, com os 13 controles aprovados em cada uma,
+incluindo abertura normal de projeto, relatórios preservados e fechamento limpo.
+Os autotestes CPU de análise/exportação passaram. A captura foi conferida como
+evidência funcional; não constitui auditoria completa de layout. Nenhuma instalação
+de produção nem manifesto do site foi alterado.
+
+Permanent compact reports / Relatórios resumidos permanentes:
+[0.8.12](validation/installer-pilot-0.8.12.json),
+[0.8.14](validation/installer-pilot-0.8.14.json).
+Full Actions artifacts have finite retention; preserve them before expiry.
+Artefatos completos do Actions têm retenção limitada; guardar antes da expiração.

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import importlib.util
 import os
 import sys
@@ -95,3 +96,27 @@ def test_normal_uninstall_allows_nsis_temporary_self_relocation(tmp_path, monkey
     monkeypatch.setattr(pilot, "registry_value", lambda *_: None)
     pilot.uninstall(tmp_path)
     assert calls == [[str(tmp_path / "Uninstall.exe"), "/S"]]
+
+
+def test_actions_download_negotiates_json_and_preserves_verified_binary_bytes(
+    tmp_path, monkeypatch
+):
+    _, preparation = pilot_modules(monkeypatch)
+    payload = b"PK\x03\x04binary artifact fixture"
+    calls = []
+
+    def invoke(arguments, **kwargs):
+        calls.append(arguments)
+        kwargs["stdout"].write(payload)
+
+    monkeypatch.setattr(preparation.subprocess, "run", invoke)
+    target = tmp_path / "artifact.zip"
+    preparation.download(
+        "actions/artifacts/123/zip",
+        target,
+        hashlib.sha256(payload).hexdigest(),
+        accept="application/json",
+    )
+    assert "Accept: application/json" in calls[0]
+    assert target.read_bytes() == payload
+    assert not target.with_suffix(".zip.part").exists()

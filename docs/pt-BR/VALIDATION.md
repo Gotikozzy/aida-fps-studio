@@ -21,3 +21,5 @@ Separe latência do primeiro frame, miniaturas e término do índice. Compare re
 PTS e proveniência, além de tempo. Não publique caminhos ou capturas privados.
 
 [Other language / Outro idioma](../en/VALIDATION.md)
+
+[Verified GitHub candidate / Candidato verificado](../GITHUB_BUILD_VALIDATION.md).

@@ -9,13 +9,18 @@ Este checklist não declara aprovação. Itens preparados referem-se apenas ao p
 - [x] Version 0.8.15; measurement import baseline and synthetic regression tests.
 - [x] GitHub-hosted CI and manually gated installer submission workflow prepared.
 - [x] Privacy disclosure and optional offline update-check mode.
-- [ ] Publish the real repository URL and identity/account mapping.
-- [ ] Confirm provenance/redistribution rights of all bundled images in docs/ASSETS.md.
+- [x] Publish the real repository URL and GitHub owner mapping (Gotikozzy).
+- [x] Owner confirmed image redistribution rights on 2026-11-15; see docs/ASSETS.md.
 - [ ] Confirm system-library exception with SignPath for Microsoft runtime/driver usage.
-- [ ] Perform clean GitHub-hosted build, review dependencies, hash manifests and SBOM.
-- [ ] Verify dependency availability and obtain all corresponding upstream sources.
-- [ ] Validate rebuilt media against retained CPU/GPU measurements on suitable hardware.
-- [ ] Configure branch protection, reviewer permissions, private security reports and MFA.
+- [x] Clean GitHub-hosted native build, 411 tests, hashes and technical native inventory (138 files).
+- [x] Python build-input CycloneDX inventory recorded; complete release SBOM review remains pending.
+- [x] Downloaded/verified build inputs and staged corresponding sources during the clean build.
+- [x] Six native GPU vector/magnitude cases exactly match 0.8.14 on RTX 2080 SUPER.
+- [ ] Complete broader real-video CPU/GPU regression and installation/upgrade/uninstall pilot.
+- [x] Protect main with PR/CI requirements; enable private security reports.
+- [x] Configure signing-production with owner approval; SIGNPATH_ENABLED remains false.
+- [x] GitHub owner confirmed MFA enabled on 2026-11-15 (owner declaration).
+- [ ] Configure/verify SignPath MFA and identities during onboarding.
 - [ ] Publish actual site hosting/log-retention policy and release/download pages.
 - [ ] Submit project application; Foundation checks reputation and repository control.
 - [ ] Configure organization/project IDs, artifact constraints and manual signing approval.
@@ -28,3 +33,5 @@ Rules checked 2026-11-15: https://signpath.org/terms
 GitHub origin rules: https://docs.signpath.io/trusted-build-systems/github
 Do not claim compliance merely because this checklist or workflows exist.
 Não declarar conformidade apenas pela existência destes arquivos.
+
+Build evidence / Evidências: [GitHub build validation](GITHUB_BUILD_VALIDATION.md).

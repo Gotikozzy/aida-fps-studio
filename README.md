@@ -1,5 +1,6 @@
 # AIDA FPS Studio 0.8.15
 
+[![Source checks](https://github.com/Gotikozzy/aida-fps-studio/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Gotikozzy/aida-fps-studio/actions/workflows/ci.yml)
 [Português](README.pt-BR.md) · [User guide](docs/en/USER_GUIDE.md) · [Build](docs/en/BUILD.md) · [Contributing](CONTRIBUTING.md)
 
 Native Windows studio for examining **observable video cadence and FPS**, organizing
@@ -61,3 +62,5 @@ Owned application code: [Apache-2.0](LICENSE). Third-party licenses remain appli
 [notices](THIRD_PARTY_NOTICES.md), [licensing scope](docs/en/LICENSING.md), [asset inventory](docs/ASSETS.md).
 User videos and projects remain user content. Historical 0.8.14 documents are references,
 not the licensing authority for 0.8.15. No additional DG analyzer modules are included.
+
+[GitHub build validation / Validação do build GitHub](docs/GITHUB_BUILD_VALIDATION.md)

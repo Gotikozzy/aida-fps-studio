@@ -45,7 +45,7 @@ jobs:
           --legacy-version ${{ matrix.legacy }}
           --candidate build/pilot-inputs/AIDA-FPS-Studio-0.8.15-windows-x64-setup.exe
           --output "${{ runner.temp }}/aida-installer-pilot"
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: original-installer-pilot-evidence-${{ matrix.legacy }}

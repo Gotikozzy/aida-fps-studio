@@ -11,9 +11,9 @@ O app limita tamanhos, verifica SHA-256, rejeita entradas inesperadas, solicita 
 e valida estrutura PE. **Não** exige Authenticode. Essa melhoria requer alteração separada,
 revisão e política de rotação; não fixe eternamente certificado de curta duração.
 
-Ordem: artefato CI assinado -> GitHub Release -> espelho idêntico -> manifesto. Preserve
-nomes/URLs para usuários existentes. Hash do EXE após assinatura, hash do ZIP após
-empacotar EXE assinado. SHA-256 da mesma origem não protege contra comprometimento dela.
+Ordem: artefato CI sem assinatura revisado -> GitHub Release -> espelho idêntico -> manifesto.
+Preserve nomes/URLs para usuários existentes. Calcule o hash do instalador final e
+o hash do ZIP após empacotar esse EXE exato. SHA-256 da mesma origem não protege contra comprometimento dela.
 Manifesto assinado/TUF poderá ser avaliado depois; não está implementado nesta versão.
 Opção offline: ../../PRIVACY.md.
 

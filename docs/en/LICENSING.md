@@ -12,8 +12,8 @@ PyInstaller hook retains its original GPL/exception notice. The NVIDIA bridge co
 owned source with the eight MIT-licensed helper/header files preserved in native/vendor.
 CUDA headers/import library are build inputs; do not bundle the toolkit into the app.
 
-Microsoft runtime files are under Microsoft's terms. Foundation eligibility of system
-runtime/driver exceptions must be confirmed during onboarding, not assumed by a script.
+Microsoft runtime files are under Microsoft's terms. Review the exact bundled runtime
+and its redistribution notices as part of dependency review for each release.
 The dependency classification report checks hashes/notices but is not legal approval.
 Inspect docs/ASSETS.md for visual-material provenance. Do not publish uncertain assets
 as if they were owned Apache code.

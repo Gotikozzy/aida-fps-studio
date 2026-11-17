@@ -1,24 +1,40 @@
-# Procedimento de release
+# Procedimento de release Windows
 
-1. Revise licenças/imagens, dependências, segurança e documentação nos dois idiomas.
-2. Integre código revisado e crie tag protegida compatível com pyproject e __version__.
-3. Execute ci.yml e windows-candidate manual a partir do commit em runners GitHub hospedados.
-4. Inspecione logs, integridade, composição nativa, fontes e teste do executável.
-5. Conclua onboarding e piloto SignPath descritos em ../../CODE_SIGNING.md.
-6. Assine arquivos próprios internos, empacote/assine desinstalador NSIS e depois instalador.
-   O workflow sign-installer cobre só a última etapa e não publica.
-7. Verifique cadeias Authenticode, timestamps, política do publicador e arquivos instalados.
-8. Teste CPU, GPU opcional, upgrade 0.8.14, projetos, exportação e desinstalação.
-9. Execute finalize_artifacts.py nos bytes finais. Gere inventário/SBOM revisado e registre
-   commit, execução CI, ferramentas, solicitação de assinatura e hashes finais.
-10. Publique assets imutáveis, espelhe os mesmos bytes no site e publique update.json por
-    último. Não substitua instalador de uma versão publicada.
+A release é distribuída sem assinatura Authenticode do projeto. Os requisitos de
+build e publicação estão abaixo e na [política de distribuição](../../CODE_SIGNING.md).
 
-Proteja branches/tags e ambientes. MFA e aprovação humana são políticas obrigatórias.
-Actions fixadas por SHA revisado; PRs de forks sem segredos. Falha bloqueia publicação.
-Hash de candidato não é hash de arquivo assinado posteriormente.
+1. Revise origem de dependências e imagens, licenças, segurança e documentação bilíngue.
+   Confira a versão em `pyproject.toml`, `src/dg_fps/__init__.py` e na tag pretendida.
+2. Faça commit das alterações revisadas. O pacote de fontes arquiva Git `HEAD`, não
+   arquivos pendentes. Execute as [verificações de fontes](../../.github/workflows/ci.yml)
+   e o [build manual Windows](../../.github/workflows/windows-candidate.yml) nesse commit.
+3. Confira testes, integridade da medição, runtime de mídia reconstruído, inventário
+   nativo, fontes correspondentes, avisos e autoteste CPU do executável. Registre URL
+   da execução, commit, ferramentas e logs. Valide GPU separadamente em hardware compatível.
+4. Verifique instalação, abertura por CPU, projetos, análise, exportação, reinstalação,
+   atualizações de versões anteriores suportadas e desinstalação. Use o
+   [piloto isolado](../INSTALLER_PILOT.md) para testes que modificam o sistema.
+5. Confirme que o estado de assinatura do instalador/aplicativo corresponde à política
+   sem assinatura. Preserve assinaturas de terceiros. Adesão a serviços e certificados
+   não são critérios de liberação.
+6. Execute `python scripts/finalize_artifacts.py` com o instalador final. Confira hashes
+   do EXE e ZIP, conteúdo do arquivo, versão e tamanho/hash de `update.candidate.json`.
+   As saídas ficam em `dist/installer/public/`; o pacote de fontes fica em `dist/`.
+7. Gere ou revise o inventário de dependências/SBOM para o instalador exato. O
+   [SBOM registrado](../RELEASE_SBOM.md) e seu gerador estão fixados ao hash de um
+   candidato histórico; reconstruções exigem inventário verificado e revisão do gerador.
+8. Aprove os artefatos para publicação. Publique arquivos versionados imutáveis e
+   checksums na release do repositório. Espelhe os mesmos bytes do instalador/ZIP no site.
+   Confira disponibilidade e hashes; publique `update.json` por último. Consulte as
+   [restrições de hospedagem e atualização](UPDATES.md).
 
-Release e candidatura são passos externos manuais; nenhuma conta, URL ou aprovação foi
-inventada. Complete ../SIGNPATH_READINESS.md antes.
+Não substitua o instalador de uma versão publicada. Reconstruir os mesmos fontes pode
+mudar os bytes; registre novos hashes e evidências. O [registro do candidato anterior](../GITHUB_BUILD_VALIDATION.md)
+não valida uma reconstrução posterior.
 
-[Other language / Outro idioma](../en/RELEASE.md)
+Proteja branches/tags, alterações de workflows e credenciais; use MFA nas contas
+mantenedoras e revisão humana da release. PRs de forks não recebem credenciais de
+publicação. O workflow de candidato envia artefatos para revisão, sem publicar release
+ou alterar o site. Falha em verificação obrigatória interrompe a publicação.
+
+[English](../en/RELEASE.md)

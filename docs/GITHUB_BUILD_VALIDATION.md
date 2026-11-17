@@ -2,8 +2,8 @@
 
 Date / Data: 2026-11-15. Product / Produto: AIDA FPS Studio 0.8.15.
 Status: **unsigned candidate built successfully / candidato sem assinatura aprovado tecnicamente**.
-This is not Foundation acceptance or a completed signed-release pilot.
-Não representa aprovação da Foundation nem piloto de release assinada concluído.
+This record describes the listed unsigned artifacts; it does not validate later rebuilds.
+Este registro descreve os artefatos sem assinatura indicados; não valida reconstruções posteriores.
 
 ## Traceability / Rastreabilidade
 
@@ -47,7 +47,7 @@ vídeos reais nem constitui benchmark de desempenho.
 GitHub artifact ID: `14178822854`, outer archive SHA-256:
 `c07d55d349f65705db8576368e2546221affd532394b89512168e087d458df67`.
 Downloaded files match GitHub's digest and the embedded final checksums. Installer
-FileVersion is 0.8.15; Authenticode status is **NotSigned**. SignPath remains disabled.
+FileVersion is 0.8.15; Authenticode status is **NotSigned**.
 Hashes conferidos; versão 0.8.15; assinatura ausente conforme esperado nesta etapa.
 
 ## Additional regression / Regressão adicional
@@ -79,9 +79,9 @@ adicionais passou em 419 testes; o build nativo original permanece documentado c
 
 The hosted runner has no NVIDIA driver; numerical GPU comparisons were local.
 The real-video comparison covers sampled windows only. The installer pilot used
-disposable GitHub VMs and did not touch the user's working installation. The [candidate SBOM](RELEASE_SBOM.md) is recorded. Foundation onboarding, system-library acceptance and
-inner-file/uninstaller signing remain required.
+disposable GitHub VMs and did not touch the user's working installation. The [candidate SBOM](RELEASE_SBOM.md) is recorded.
+Publication still requires final artifact and hosting review under the [release procedure](en/RELEASE.md).
 
 O runner não tem driver NVIDIA. Os testes locais de GPU e os trechos reais têm
-escopo delimitado. A instalação foi testada em VMs descartáveis. O SBOM do candidato está registrado; onboarding, aceite das bibliotecas de sistema e assinatura continuam pendentes.
+escopo delimitado. A instalação foi testada em VMs descartáveis. O SBOM do candidato está registrado; a publicação exige revisão final dos artefatos e da hospedagem.
 No site update manifest was published. Nenhum manifesto de atualização foi publicado.

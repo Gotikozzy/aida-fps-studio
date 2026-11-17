@@ -12,8 +12,8 @@ aviso GPL/exceção original. Ponte NVIDIA combina fonte próprio com oito helpe
 MIT em native/vendor. Headers/import library CUDA são entradas de build; não inclua
 CUDA Toolkit no aplicativo.
 
-Runtime Microsoft segue termos próprios. Confirme enquadramento nas exceções de sistema/
-driver durante onboarding; scripts não concedem aprovação jurídica. Relatório de classificação
+Runtime Microsoft segue termos próprios. Revise os arquivos distribuídos e seus avisos
+na revisão de dependências de cada release. Scripts não concedem aprovação jurídica. O relatório
 verifica hashes/avisos. Consulte docs/ASSETS.md; não declare imagens incertas como código próprio.
 
 Avisos: ../../THIRD_PARTY_NOTICES.md e installer/third_party_texts. Fontes correspondentes

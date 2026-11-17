@@ -12,9 +12,9 @@ requires confirmation and validates PE structure before launch. It does **not** 
 Authenticode. That improvement needs a separate reviewed updater change and certificate
 rotation policy. Do not pin a short-lived leaf certificate forever.
 
-Release order: signed CI artifact -> GitHub Release -> identical site mirror -> manifest.
-Keep existing URL/name conventions for already installed clients. Signed EXE hashing occurs
-after signing; ZIP hashing occurs after packaging that signed EXE. SHA-256 from the same
+Release order: reviewed unsigned CI artifact -> GitHub Release -> identical site mirror -> manifest.
+Keep existing URL/name conventions for already installed clients. Compute the EXE digest
+from the final installer and the ZIP digest after packaging that exact EXE. SHA-256 from the same
 origin does not protect against compromise of that origin. A signed manifest/TUF-style
 scheme may be evaluated later; it is not present in this version.
 Offline checks are controlled by the marker described in ../../PRIVACY.md.

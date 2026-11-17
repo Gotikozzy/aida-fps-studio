@@ -19,7 +19,8 @@ O script verifica baseline, baixa entradas mídia/Qt/CUDA/NSIS, extrai toolchain
 compila FFmpeg, ajusta nomes de importação PyAV, compila ponte NVIDIA, testa com esse
 runtime, congela aplicativo, reúne avisos/fontes, classifica dependências e gera instalador
 **sem assinatura**. Use checkout commitado: package_release.py arquiva Git HEAD.
-Fornecer o script não comprova execução limpa; registre a execução real.
+Registre cada execução e seus artefatos; a [evidência anterior](../GITHUB_BUILD_VALIDATION.md)
+se aplica somente ao commit e hashes nela indicados.
 
 FFmpeg 8.0.1, PyAV 16.1.0, OpenH264 2.6.0 e dav1d 1.5.1 mantêm a composição de
 referência, sem habilitar GPL/nonfree. Não substitua pelo FFmpeg do wheel PyAV comum
@@ -32,9 +33,10 @@ Disponibilidade e direitos exigem revisão na release. Nativos desconhecidos blo
 a distribuição; classificação não é parecer jurídico. Revise a allowlist, não a amplie cegamente.
 
 Saídas: dist/<versão>/AIDA-FPS-Studio e dist/installer/public. Esta mantém EXE, ZIP,
-hashes e update.candidate.json. Nenhum script publica manifesto no site. Assine antes
-dos hashes finais. Objetivo é rastreabilidade, sem prometer hashes binários idênticos
-entre compiladores, timestamps ou assinaturas. Execute CI GitHub separadamente.
+hashes e update.candidate.json. Nenhum script publica manifesto no site. Calcule hashes
+após concluir o empacotamento. Objetivo é rastreabilidade, sem prometer hashes binários idênticos
+entre compiladores ou timestamps. Registre cada execução CI e seus artefatos.
+A release usa os bytes finais sem assinatura; não exige credenciais de assinatura.
 
 [Other language / Outro idioma](../en/BUILD.md)
 

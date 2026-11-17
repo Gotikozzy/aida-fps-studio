@@ -23,9 +23,10 @@ privacidade, metadados, integridade e confinamento. Links e URLs de entrada veri
 Limits / Limites: these are local results, not a clean GitHub Actions build or a signed
 production pilot. The test run uses the reference development PyAV wheel runtime, not
 a fresh rebuild of FFmpeg. GPU numerical equivalence was not re-measured in this run.
-Foundation approval, actual repository/account configuration, asset rights and installed
-signature validation remain release gates in SIGNPATH_READINESS.md.
+Current release requirements are defined in [the release procedure](en/RELEASE.md).
+The later [GitHub build record](GITHUB_BUILD_VALIDATION.md) documents separate evidence.
 
 Resultados locais não são build GitHub nem piloto assinado. Testes usam wheel PyAV de
 desenvolvimento; não reconstroem FFmpeg. Equivalência numérica GPU não foi reavaliada.
-Aprovação, contas, direitos das imagens e assinaturas instaladas seguem no checklist.
+Os requisitos atuais estão no [procedimento de release](pt-BR/RELEASE.md); o registro
+de build GitHub documenta evidências posteriores separadamente.

@@ -28,7 +28,7 @@ def main() -> None:
     digest = hashes[1].split()[0]
     (directory / "SHA256SUMS.txt").write_text("".join(hashes), encoding="ascii")
     package.with_suffix(".sha256").write_text(hashes[1], encoding="ascii")
-    # Rebuild portable delivery after legal/source staging and any inner-file signing.
+    # Rebuild portable delivery after final legal/source staging.
     bundle = ROOT / "dist" / version / "AIDA-FPS-Studio"
     if bundle.is_dir():
         portable = ROOT / "dist" / f"AIDA-FPS-Studio-{version}-windows-x64.zip"
@@ -36,7 +36,7 @@ def main() -> None:
             for path in sorted(bundle.rglob("*")):
                 if path.is_file():
                     archive.write(path, Path("AIDA-FPS-Studio") / path.relative_to(bundle))
-    # A candidate file only: never upload this automatically or before signature review.
+    # A candidate file only: publish manually after final artifact review.
     (directory / "update.candidate.json").write_text(
         json.dumps(
             {
@@ -49,7 +49,7 @@ def main() -> None:
         + "\n",
         encoding="utf-8",
     )
-    print("Final hashes prepared; verify signing status before publication")
+    print("Final unsigned-package hashes prepared; review artifacts before publication")
 
 
 if __name__ == "__main__":

@@ -18,13 +18,12 @@ Licenças vêm da revisão existente, sem atribuições inventadas. O schema ofi
 CycloneDX 1.5 passou.
 
 This is a file/package inventory, not a complete transitive dependency graph,
-independent legal clearance or Foundation acceptance. Microsoft system-library
-acceptance remains pending. A signed release has different hashes and needs a
-new inventory. The earlier Python wheel BOM covers build inputs separately.
+independent license review or publisher authentication. Any rebuild or repackaging
+that changes the installer bytes needs a new verified inventory. The earlier Python wheel BOM covers build inputs separately.
 
-Este inventário não é grafo transitivo completo nem aceite jurídico/da Foundation.
-O enquadramento das bibliotecas Microsoft continua pendente. A release assinada
-precisará de novo inventário/hashes. O SBOM anterior de wheels cobre entradas de build.
+Este inventário não é grafo transitivo completo, revisão independente de licenças
+ou autenticação do editor. Reconstruir ou reempacotar com alteração dos bytes exige
+novo inventário verificado e novos hashes. O SBOM anterior de wheels cobre entradas de build.
 
 Reproduce from a fresh 7-Zip extraction (not a directory used to launch the app):
 Reproduzir a partir de extração limpa pelo 7-Zip:

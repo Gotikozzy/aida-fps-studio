@@ -19,8 +19,8 @@ The candidate script checks the source baseline, fetches media/Qt/CUDA/NSIS inpu
 extracts the verified toolchain, builds FFmpeg, rebinds PyAV import names, builds the NVIDIA
 bridge, runs tests with that media runtime, freezes the app, stages notices/sources,
 classifies native dependencies and creates an **unsigned** installer and checksums.
-Run from a committed checkout: package_release.py archives Git HEAD. A clean candidate
-build has not been demonstrated merely by shipping this script; record the actual run.
+Run from a committed checkout: package_release.py archives Git HEAD. Record the actual run and its artifacts; the
+[earlier candidate evidence](../GITHUB_BUILD_VALIDATION.md) applies only to its listed commit/hashes.
 
 FFmpeg 8.0.1, PyAV 16.1.0, OpenH264 2.6.0 and dav1d 1.5.1 retain the reference composition;
 GPL/nonfree codec enablement stays off. Do not replace it with the stock PyAV wheel's
@@ -35,8 +35,9 @@ The native-review script's component allowlist must be reviewed, not blindly exp
 
 Outputs: dist/<version>/AIDA-FPS-Studio and dist/installer/public. The latter contains a
 retained EXE, ZIP, hashes and update.candidate.json. No script uploads the site manifest.
-Sign before final hashes. These builds aim for traceable inputs, not a promise of identical
-binary hashes across compilers, timestamps or signatures. GitHub CI must be run separately.
+The release uses these unsigned final bytes; no signing credentials are required. Compute
+hashes after packaging. Builds aim for traceable inputs, not identical binary hashes across
+compilers or timestamps. Record each GitHub CI run and its exact artifacts separately.
 
 [Other language / Outro idioma](../pt-BR/BUILD.md)
 

@@ -1,61 +1,65 @@
-# Code signing policy
+# Windows distribution policy / Política de distribuição Windows
 
-[Privacy / Privacidade](PRIVACY.md) · [Release EN](docs/en/RELEASE.md) · [Release PT](docs/pt-BR/RELEASE.md)
+## English
 
-## Status / Situação
+AIDA FPS Studio distributes its Windows application, native bridge and NSIS
+installer without project Authenticode signing. No signing service, certificate,
+API token or signing environment is required by the build. Preserve any original
+upstream signatures; do not apply project signing to third-party binaries.
 
-EN: Prepared for application, **not enrolled, approved or signed by SignPath Foundation**.
-Local binaries and source archives must not be described as Foundation-signed. The signing
-workflow is gated by repository configuration and does not publish releases. Foundation
-approval, verifiable reputation and technical onboarding are external requirements.
-PT: Preparado para candidatura; **sem adesão, aprovação ou assinatura pela Foundation**.
-Não anuncie aprovação em binários ou fontes locais. O workflow é condicionado à
-configuração e não publica releases. Aprovação e onboarding são requisitos externos.
+Windows can display an unknown-publisher or reputation warning. Users should check
+origin, version and the published SHA-256 before running a package. Do not instruct
+users to disable antivirus or Windows security protections. A matching checksum
+establishes agreement with the reference bytes, not publisher identity or safety.
 
-## Responsibility / Responsabilidade
+Release review requires a traceable source commit and CI run, passing tests,
+measurement-source integrity, native dependency review, license notices,
+corresponding sources, installer lifecycle tests and an inventory for the final
+artifact. Compute EXE and ZIP hashes after all packaging steps. Publish immutable
+assets, mirror identical bytes to the official site and update the manifest last.
+[Release procedure](docs/en/RELEASE.md).
 
-Project owner / titular: Detonando Gueek. Initial author and reviewer: project owner.
-Production signing approver: project owner, subject to onboarding verification.
-GitHub owner, author/reviewer and designated signing approver: [Gotikozzy](https://github.com/Gotikozzy).
-SignPath identity mapping remains subject to onboarding before enabling signing.
-External PRs require review. Every production signing request requires a trusted person's
-manual approval. All team members use MFA on GitHub and SignPath. Restrict signing to
-reviewed source branches/tags and GitHub-hosted builds. Protect workflow changes and
-release publication; fork PRs never receive signing secrets.
+The existing updater checks size, SHA-256, ZIP contents and PE structure. It does
+not verify Authenticode or a cryptographically signed manifest. HTTPS and control
+of the distribution origin remain part of the trust boundary. A checksum obtained
+from the same compromised origin would not provide independent authentication.
 
-Titular e autor/revisor inicial: Detonando Gueek. Aprovador de produção: titular,
-sujeito à verificação no onboarding. Conta GitHub: [Gotikozzy](https://github.com/Gotikozzy).
-O vínculo com a identidade SignPath será definido no onboarding.
-PRs externos exigem revisão; cada solicitação de produção exige aprovação humana.
-Equipe com MFA no GitHub/SignPath. Restringir branches/tags, runners e publicação.
+Keep source branches, workflow edits and publication access protected. Review
+external PRs, use MFA for maintainer accounts and withhold publication credentials
+from fork builds. Publication is manual and follows artifact review.
 
-## Scope / Escopo
+Future signing requires a reviewed architecture decision covering publisher
+identity, key custody, owned-file scope, installer/uninstaller handling and updater
+compatibility. [Current decision](docs/adr/0003-unsigned-windows-distribution.md).
 
-Sign only owned AIDA executable, owned bridge and installer/uninstaller after review.
-Do not apply wildcard signing to Qt, FFmpeg, Python, PyAV, NumPy or other upstream
-binaries. Preserve their signatures and license/replacement rights. Project metadata
-must identify AIDA FPS Studio and the same version across its signed files.
-Build, sign inner application files, package, sign uninstaller/installer, verify signatures,
-then compute ZIP hashes. Installer-only signing does not sign installed programs.
+## Português
 
-Assinar apenas arquivos próprios aprovados. Preservar assinaturas e licenças upstream.
-Metadados do produto e versão consistentes. Assinar arquivos internos antes de empacotar;
-instalador assinado sozinho não assina o aplicativo instalado.
+O AIDA FPS Studio distribui aplicativo Windows, ponte nativa e instalador NSIS sem
+assinatura Authenticode do projeto. O build não exige serviço de assinatura,
+certificado, token ou ambiente de assinatura. Preserve assinaturas originais de
+terceiros; não aplique assinatura do projeto aos binários de dependências.
 
-## Enablement gate / Critérios para habilitar
+O Windows pode exibir avisos de editor desconhecido ou reputação. Confira origem,
+versão e SHA-256 publicado antes de executar. Não oriente a desativação do antivírus
+ou das proteções do Windows. Um checksum igual comprova correspondência com os
+bytes de referência, não identidade do editor ou segurança do programa.
 
-Follow docs/SIGNPATH_READINESS.md. Configure project/organization identifiers and token,
-artifact rules, branch constraints, identities, MFA and manual production approval.
-Run a complete signed pilot including NSIS uninstaller handling. The supplied workflow
-submits a final installer for signing; it does not implement inner-file/uninstaller signing.
-Those stages remain explicit prerequisites to a fully signed production distribution.
-Do not enable production publication until that pilot and the listed checks pass.
+A revisão da release exige commit e execução CI rastreáveis, testes aprovados,
+integridade dos fontes de medição, revisão nativa, avisos de licenças, fontes
+correspondentes, testes do ciclo de instalação e inventário do artefato final.
+Calcule hashes do EXE e ZIP depois de todo o empacotamento. Publique arquivos
+imutáveis, espelhe os mesmos bytes no site e atualize o manifesto por último.
+[Procedimento de release](docs/pt-BR/RELEASE.md).
 
-Siga o checklist. O workflow fornecido assina o instalador final; assinatura dos arquivos
-internos e do desinstalador exige integração adicional e piloto. Não publicar como
-pacote completamente assinado enquanto essas etapas não estiverem verificadas.
+O atualizador verifica tamanho, SHA-256, conteúdo do ZIP e estrutura PE. Não valida
+Authenticode nem manifesto assinado criptograficamente. HTTPS e controle da origem
+de distribuição integram a fronteira de confiança. Um hash obtido da mesma origem
+comprometida não oferece autenticação independente.
 
-After actual acceptance, add the official attribution on home/download/release pages:
-“Free code signing provided by SignPath.io, certificate by SignPath Foundation”.
-Add it only when accurate. Rules: https://signpath.org/terms
-Integration: https://docs.signpath.io/trusted-build-systems/github
+Proteja branches, alterações em workflows e acesso à publicação. Revise PRs
+externos, use MFA nas contas mantenedoras e não forneça credenciais de publicação
+a builds de forks. A publicação é manual e sucede a revisão dos artefatos.
+
+Uma futura assinatura exige decisão revisada sobre identidade, guarda das chaves,
+escopo de arquivos próprios, instalador/desinstalador e compatibilidade do atualizador.
+[Decisão vigente](docs/adr/0003-unsigned-windows-distribution.md).

@@ -19,8 +19,8 @@ ou crie um arquivo vazio .disable-update-check na pasta do programa. Apague esse
 arquivo para reativá-las. O modo offline não muda as medições.
 Diagnósticos e logs locais podem conter caminhos; revise-os antes de compartilhar.
 
-Assinatura: esta distribuição preparada localmente não foi assinada pela SignPath.
-A candidatura e a configuração de assinatura dependem de revisão e aprovação.
+Assinatura: os executáveis do projeto são distribuídos sem assinatura Authenticode.
+Confira a origem e o SHA-256 publicado; o hash não autentica a identidade do editor.
 As licenças LGPL permitem substituir bibliotecas compatíveis e depurar alterações.
 O catálogo de licenças e fontes correspondentes acompanha o instalador público.
 
@@ -43,7 +43,7 @@ creating an empty .disable-update-check file in the program directory. Delete th
 file to re-enable checks. Offline mode does not change measurements.
 Local diagnostics and logs may contain paths; review them before sharing.
 
-Signing: this locally prepared distribution has not been signed by SignPath.
-Enrollment and signing configuration require review and approval.
+Signing: project executables are distributed without Authenticode signing.
+Check the origin and published SHA-256; a hash does not authenticate publisher identity.
 LGPL rights to replace compatible libraries and debug changes are preserved.
 The public installer includes the license catalog and corresponding library sources.

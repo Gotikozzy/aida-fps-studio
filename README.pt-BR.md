@@ -144,6 +144,11 @@ os arquivos de fontes são gerados de Git `HEAD`. Artefatos gerados ficam fora d
 Cada registro de validação se aplica ao commit e aos hashes nele indicados. Um novo
 build exige verificação própria; um checkout de fontes não é um instalador publicado.
 
+## Autor
+
+Criado por **[Gotikozzy](https://github.com/Gotikozzy) (Ederson Padovani)**.
+Site: [detonandogueek.com.br](https://detonandogueek.com.br).
+
 ## Licença
 
 Código do aplicativo sob [Apache-2.0](LICENSE). Dependências mantêm suas próprias

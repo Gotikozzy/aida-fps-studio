@@ -142,6 +142,11 @@ source archives use Git `HEAD`. Generated artifacts remain outside Git.
 Recorded validation applies to the commit and artifact hashes listed in each report.
 A new build requires its own verification; a source checkout is not a published installer.
 
+## Author
+
+Created by **[Gotikozzy](https://github.com/Gotikozzy) (Ederson Padovani)**.
+Website: [detonandogueek.com.br](https://detonandogueek.com.br).
+
 ## License
 
 Application code is licensed under [Apache-2.0](LICENSE). Dependencies retain their own
